@@ -242,6 +242,7 @@ http://<ADDRESS>
 
 ```
 
+Note: As the ingress-controller is the cluster level appication which needed to be added to the cluster only once, you must first create the serviceAccount and attach that serviceAccount to the IAMRole for that ingress-controller.  
 
 
 
