@@ -1,5 +1,9 @@
 # eks cluster practical example with fargate
-We are going to luanch a 2048 game in a k8s cluster. All the commands to run the project are
+We are going to luanch a 2048 game in a k8s cluster, with ingress controller:
+
+Note: As the ingress-controller is the cluster level application which only added once, you must first create the serviceAccount and attach it to the IAMRole for that ingress-controller. 
+
+All the commands to run the project are
 ```
 # 1. first configure the aws cli, then insert the required keys
 # region : eu-central-1
@@ -106,7 +110,7 @@ http://<ADDRESS>
 
 ```
 
-Note: As the ingress-controller is the cluster level appication which needed to be added to the cluster only once, you must first create the serviceAccount and attach that serviceAccount to the IAMRole for that ingress-controller.  
+ 
 
 
 
