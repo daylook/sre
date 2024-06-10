@@ -161,7 +161,27 @@ $ eksctl create fargateprofile \
 
 # 6. Now a new fargate profile with namespace of game-2048 is created in the compute tab of the cluster.
 
-# 7. load all the k8s reources from the yaml file, 
+# 7. load all the k8s reources from the yaml file
+$ kubectl apply -f https://raw.githubusercontent.com/daylook/sre/main/k8s/eks-fargate-game2048-resources.yml
+
+# 8. To check if all the cluster resources are configured
+$ kubectl get pods -n game-2048 -w
+$ kubectl get svc -n game-2048
+$ kubectl get ingress -n game-2048
+
+# Note: We still dont have any address for the ingress, as the ingress controller still has not been installed
+
+# 9. We need to add the oid provider to the cluster
+$ eksctl utils associate-iam-oidc-provider --cluster demo-cluster --approve
+
+# Now you can check the newly created oid provider in your IAM console
+
+# 10. We need to add the ALB ingress controller pod. (any controller in k8s is pod)
+# Then we want to grant access to AWS service ALB to this pod.  
+# This ALB ingress controller will create a load balancer for us.
+# first we need to create the IAM policy and role for it:
+
+
 
 ```
 
