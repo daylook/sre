@@ -12,7 +12,8 @@ $ eksctl create cluster --name demo-cluster --region eu-central-1 --fargate
 $ aws eks update-kubeconfig --region eu-central-1 --name demo-cluster
 
 # 4. check the current k8s context
-$ kubectx            # the kubectx tool should already been installed or 
+$ kubectx            # the kubectx tool should already been installed 
+or 
 $ kubectl config current-context
 
 # 5. To create a new namespace for the app, first create the fargate profile
